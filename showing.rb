@@ -13,8 +13,13 @@ class Showing
 		current_page
 	end
 
+	def determine_pages
+		@total_products / @products_per_page
+	end
+
 	def current_page
-		puts "You're on page 1. Showing 1 to 10 of 50 products"
+		pages = determine_pages
+		puts "You're on page 1 of #{pages}. Showing 1 to 10 of 50 products"
 	end
 end
 
