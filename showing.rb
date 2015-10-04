@@ -30,7 +30,7 @@ class Showing
 	def current_page
 		pages = determine_pages
 		products_to_list_on_page
-		puts "You're on page #{@user_page} of #{pages}. Showing #{@low_range} to #{@high_range} of 50 products"
+		puts "You're on page #{@user_page} of #{pages}. Showing #{@low_range} to #{@high_range} of #{@total_products} products"
 		
 	end
 end
