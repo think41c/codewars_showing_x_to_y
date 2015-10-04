@@ -17,9 +17,17 @@ class Showing
 		@total_products / @products_per_page
 	end
 
+	def products_to_list_on_page
+		if @user_page > 1 
+			low_range  = puts @user_page * 10
+			high_range = puts (@user_page+1)*10-1
+		end
+	end
+
 	def current_page
 		pages = determine_pages
 		puts "You're on page 1 of #{pages}. Showing 1 to 10 of 50 products"
+		products_to_list_on_page
 	end
 end
 
