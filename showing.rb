@@ -21,6 +21,9 @@ class Showing
 		if @user_page > 1 
 			@low_range  = @user_page * @products_per_page
 			@high_range = (@user_page+1)*@products_per_page-1
+		else
+			@low_range = 1
+			@high_range = 10
 		end
 	end
 
