@@ -23,7 +23,7 @@ class Showing
 			@high_range = (@user_page+1)*@products_per_page-1
 		else
 			@low_range = 1
-			@high_range = 10
+			@high_range = @products_per_page
 		end
 	end
 
@@ -37,5 +37,5 @@ end
 
 page = Showing.new(50, 10, 1)  # Should return "Showing 1-10 Products of 50 products"
 page = Showing.new(50, 10, 2)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
-page = Showing.new(50, 8, 3)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
+page = Showing.new(40, 8, 1)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
 # Products, Products per Page, and Page user is On. 
