@@ -19,9 +19,6 @@ class Showing
 
 	def products_to_list_on_page
 		if @user_page > 1 
-			puts @user_page*@products_per_page
-			# 1-10
-			# 11-20
 			@low_range  = @user_page*@products_per_page-@products_per_page+1
 			@high_range = @user_page*@products_per_page
 		else
@@ -38,7 +35,7 @@ class Showing
 	end
 end
 
-# page = Showing.new(50, 10, 1)  # Should return "Showing 1-10 Products of 50 products"
-# page = Showing.new(50, 10, 2)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
+page = Showing.new(50, 10, 1)  # Should return "Showing 1-10 Products of 50 products"
+page = Showing.new(50, 10, 2)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
 page = Showing.new(90, 30, 3)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
 # Products, Products per Page, and Page user is On. 
