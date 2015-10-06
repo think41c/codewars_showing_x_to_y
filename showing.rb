@@ -22,8 +22,8 @@ class Showing
 			puts @user_page*@products_per_page
 			# 1-10
 			# 11-20
-			@low_range  = (@user_page-1)*@products_per_page+1
-			@high_range = (@user_page+1)*@products_per_page-1
+			@low_range  = @user_page*@products_per_page-@products_per_page+1
+			@high_range = @user_page*@products_per_page
 		else
 			@low_range = 1
 			@high_range = @products_per_page
@@ -40,5 +40,5 @@ end
 
 # page = Showing.new(50, 10, 1)  # Should return "Showing 1-10 Products of 50 products"
 # page = Showing.new(50, 10, 2)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
-page = Showing.new(80, 10, 2)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
+page = Showing.new(90, 30, 3)  # Should return "You're on page 2 of 5. Showing 11 to 20 of 50 products.""
 # Products, Products per Page, and Page user is On. 
