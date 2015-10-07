@@ -7,9 +7,10 @@
 
 class Showing
 	def initialize(total_products, products_per_page, user_page)
-		@total_products = total_products 
+		@total_products    = total_products 
 		@products_per_page = products_per_page 
-		@user_page = user_page 
+		@user_page         = user_page 
+		@low_range         = 1
 		current_page
 	end
 
@@ -22,7 +23,6 @@ class Showing
 			@low_range  = @user_page*@products_per_page-@products_per_page+1
 			@high_range = @user_page*@products_per_page
 		else
-			@low_range = 1
 			@high_range = @products_per_page
 		end
 	end
